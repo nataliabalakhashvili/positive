@@ -1,0 +1,1896 @@
+@import "normalize.styl"
+
+header
+  position fixed
+  height: 142px
+  top 0
+  left 0
+  width: 100%
+  background: #f6f8f8
+  z-index 99
+  +mq(768px)
+    height 112px
+  &#navbar
+    &.sticky{
+      background: red
+    }
+
+.burger-menu
+  display: flex
+  align-items: center
+  justify-content: center
+  width 80px
+  z-index 1000
+  height 80px
+  position: fixed
+  left: 25px
+  top 30px
+  border-radius: 50px
+  background: white
+  border 3px solid #f3f3f3
+  cursor pointer
+  +mq(768px)
+    left 17px
+    top 17px
+  +mq(500px)
+    left 15px
+    top 15px
+  &:focus
+    background: white!important
+  &.active
+    span
+      &:first-child
+        transform translateY(7px) rotate(225deg)
+      &:nth-child(2)
+        opacity 0
+        transform rotate(135deg)
+      &:last-child
+        transform translateY(-7px) rotate(135deg)
+  div
+    width: 34px
+  span
+    width 34px
+    height 2px
+    background #37536f
+    display block
+    margin 5px 0
+    transition: 0.5s
+    border-radius: 10px
+.logo
+  display block
+  position absolute
+  margin-top 15px
+  left 50%
+  transform translateX(-50%)
+  img
+    width: 110px
+    +mq(768px)
+      width 80px
+.music-control
+  position absolute
+  right 40px
+  top 55px
+  +mq(768px)
+    right: 20px;
+    top: 35px;
+  .image
+    width 30px
+    margin-right: 10px
+    box-sizing content-box
+    padding-top 30px
+    background-size cover
+    background-position center center
+    background-repeat no-repeat
+    position relative
+    background-color transparent
+    +mq(992px)
+      display none
+  .prev
+    width: 12px
+    height 12px
+    display: block
+    background: url(../../assets/images/previous-track.svg)
+    background-size: 100%
+    transition 0.1s
+    border none
+    opacity 0.7
+    margin-top: 9px
+    cursor: pointer
+    &:hover
+      opacity 1
+    &.disable
+      opacity 0.1
+      &:hover
+        opacity 0.1
+  .next
+    transform rotate(180deg)
+    width: 12px
+    height 12px
+    display: block
+    background: url(../../assets/images/previous-track.svg)
+    background-size: 100%
+    border none
+    transition 0.1s
+    margin-top 9px
+    cursor: pointer
+    opacity 0.7
+    &:hover
+      opacity 1
+    &.disable
+      opacity 0.1
+      &:hover
+        opacity 0.1
+  .pause
+    width: 12px
+    height 12px
+    margin: 0 15px
+    display: block
+    margin-top 9px
+    background-size: 100%
+    transform rotate(0deg)
+    background: url(../../assets/images/play.svg)
+    border none
+    opacity 0.7
+    cursor: pointer
+    transition 0.1s
+    &.active
+      transform rotate(180deg)
+      background: url(../../assets/images/pause.svg)
+      background-size: 100%
+    &:hover
+      opacity 1
+  .title
+    width: 110px
+    line-height: 1.2
+    border-right: 1px solid pink
+    margin-right: 20px
+    margin-top: 2px
+    +mq(992px)
+      display none
+    .author
+      margin-right 10px
+      width 100px
+      text-transform uppercase
+      font-size: 12px
+    .song
+      margin-right: 10px
+      width 100%
+      font-size: 12px
+  .player-options
+    +mq(992px)
+      display none
+
+.nav-fixed
+  background: white
+  box-shadow: 0 0 20px rgba(black, 0.5)
+  width 500px
+  height 100vh
+  position fixed
+  padding-top 20vh
+  left 0
+  top 0
+  z-index: 110
+  transform translateX(-550px)
+  transition: 0.8s ease
+  +mq(768px)
+    width 100%
+    max-width 500px
+  .inside
+    transform translateX(-500px)
+    transition: 0.8s ease
+    width: 100%
+    height 100%
+    position absolute
+    left 0
+    top 0
+  &.active
+    transform translateX(0)
+    .inside
+      transition-delay: 0.2s
+      transform translateX(0)
+      ul
+        li
+          transform translateX(0)
+          opacity 1
+          &:first-child
+            transition-delay 0.7s
+          &:nth-child(2)
+            transition-delay 0.9s
+          &:nth-child(3)
+            transition-delay 1.1s
+          &:nth-child(4)
+            transition-delay 1.3s
+          &:nth-child(5)
+            transition-delay 1.5s
+  ul
+    margin-top: 160px
+    +mq(768px)
+      margin-top 130px
+    li
+      transform translateX(-80px)
+      opacity 0
+      transition 0.7s
+      
+    a
+      margin-left: 130px
+      font-size: 28px
+      line-height: 8vh
+      color #1f3645
+      position relative
+      display inline-block
+      +mq(768px)
+        margin-left 53px
+      &::before
+        content: attr(data-text)
+        width: 0
+        overflow: hidden
+        height: 100%
+        color pink
+        font-size: 28px
+        position: absolute
+        left 0
+        top 0
+        z-index 1
+        transition: 0.6s ease
+      &::after
+        content: ""
+        width: 0
+        position: absolute
+        left -30px
+        top 50%
+        height 2px
+        background: pink
+        transform: translateY(-50%)
+        transition: 0.6s ease
+        +mq(768px)
+          left -15px
+      &:hover,
+      &.active
+        &::before
+          width 100%
+        &::after
+          width 100px
+          transform translateX(-100px)
+  .menu-title
+    text-transform uppercase
+    position absolute
+    left 130px
+    font-size: 28px
+    top 50px
+    color: darkblue
+    +mq(768px)
+      display none
+
+.languages
+  position absolute
+  right 38px
+  top 57px
+  width 104px
+  +mq(768px)
+    right: 20px;
+    top: 38px;
+  a
+    display inline-block
+    padding 5px 10px 3px
+    font-size: 12px
+    margin-left: 0
+    text-transform uppercase
+    border-radius: 3px
+    color: darkblue
+    margin-left: 4px
+    transition: 0.5s
+    &.active,
+    &:hover
+      background: pink
+      color white
+
+.fixed-contact
+  position absolute
+  bottom 100px
+  left 0
+  a
+    display block
+    margin-left: 130px
+    color #1f3645
+    font-size: 25px
+    +mq(768px)
+      margin-left 53px
+.platform
+  position absolute
+  bottom 0
+  left 40px
+  right 40px
+  font-size: 0
+  overflow hidden
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  +mq(768px)
+    border-top-left-radius: 0px
+    border-top-right-radius: 0px
+    left 0
+    right 0
+  a
+    display inline-flex
+    height 64px
+    align-items: center
+    justify-content: center
+    width calc(100% / 3)
+    background: orange
+    position relative
+    transition: 0.5s
+    &::after
+      position absolute
+      content: "";
+      width 1px
+      height 30px
+      background: darken(orange, 14%)
+      right 0
+      top calc(50% + 3px)
+      transform: translateY(-50%)
+    &:hover
+      opacity 0.8
+  img
+    width 26px
+    padding-top: 3px
+
+.music-menu
+  width: 17px
+  height 20px
+  margin-top 5px
+  margin-left: 15px
+  opacity 0.7
+  background: url(../images/list.svg) no-repeat center center
+  background-size: 100%
+  border none
+  cursor: pointer
+  transition: 0.1s
+  &.responsive
+    display none
+    background: url(../images/menu-resp.png) no-repeat center center
+    opacity 1
+    background-size: 100%
+    width: 35px
+    height 35px
+    +mq(992px)
+      display block
+  &.desktop
+    +mq(992px)
+      display none
+  &:hover
+      opacity 1
+
+.music-list-fixed
+  background: white
+  box-shadow: 0 0 20px rgba(0,0,0,0.5)
+  position fixed
+  top 0
+  z-index: 1100
+  right 0
+  transform translateX(600px)
+  width 400px
+  height 100vh
+  transition: 0.8s ease
+  +mq(768px)
+    width 100%
+    max-width 400px
+  &.active
+    transform translateX(0)
+    .music-list
+      transform translateX(0)
+.cover
+  position relative
+  .blur-cover
+    width 100%
+    height 205
+    overflow hidden
+    .cover-img
+      width: calc(100% + 20px)
+      margin -10px 0 0 -10px
+      filter blur(5px)
+      image(230px)
+      +mq(768px)
+        padding-top 180px
+      &::after
+        position absolute
+        width 100%
+        height 100%
+        top 0
+        left 0
+        content ""
+        background: rgba(lightblue, 0.6)
+  .info
+    position absolute
+    top 20px
+    left 20px
+    right 20px
+    transition: 0.8s ease
+    // transition-delay: 0.2s
+    .image
+      image(120px)
+      width 120px
+      border-radius: 5px
+      +mq(768px)
+        width 70px
+        padding-top 70px
+    .title
+      width calc(100% - 140px)
+      margin-left: 20px
+      color white
+      font-size: 14px
+      margin-top: 10px
+      line-height: 1.4
+      font-family dejavu
+      +mq(768px)
+        margin-top 0
+        width calc(100% - 110px)
+      .author
+        width 100%
+        text-transform: uppercase
+        dots(38px,2)
+        max-height: 38px
+        height auto
+      .song
+        width 100%
+        margin-top 2px
+        dots(38px,2)
+.music-list
+  transition: 0.8s ease
+  transition-delay: 0.2s
+  transform translateX(500px)
+.menu-audio
+  position relative
+  audio
+    width: 100%
+    margin-top: 30px
+.each-music
+  border-bottom: 1px solid #ecf0f1
+  cursor pointer
+  position relative
+  &::after
+    position absolute
+    content ""
+    width 0
+    height 100%
+    left 0
+    top 0
+    transition: 0.8s
+    background: #ecf0f1
+  .image
+    image(70px)
+    width 70px
+    margin 10px 20px
+    z-index 1
+    border-radius: 5px
+  .title
+    margin-top: 20px
+    width calc(100% - 187px)
+    .author
+      text-transform: uppercase
+      color #43424b
+      font-size: 14px
+      position relative
+      z-index: 1
+    .song
+      color #43424b
+      font-size: 14px
+      z-index 1
+      position relative
+  .time
+    width 40px
+    height: 91px
+    font-size: 13px
+    line-height 88px
+    padding 0 30px 0 20px
+    position relative
+    z-index 1
+    transition: 0.5s
+  &:hover,
+  &.active
+    .author
+      color pink
+    &::after
+      width 100%
+      // left 0
+      // right auto
+    .time
+      color pink
+.music-list-close
+  width 100%
+  height 100vh
+  position fixed
+  left 0
+  top 0
+  z-index: 100
+  display: none
+  background: transparent
+  &.active
+    display block
+
+.main-slider
+  margin-top 160px
+  height calc(100vh - 320px)
+  background #2d9fc9
+  position relative
+  width 100vw
+  overflow hidden
+  +mq(768px)
+    margin-top 112px
+    height calc(100vh - 240px)
+  .dots
+    position: absolute
+    left 30px
+    top 50%
+    transform translateY(-50%)
+    width 14px
+    z-index: 10;
+    button
+      width: 14px
+      height: 14px
+      display block
+      border none
+      margin 6px 0
+      border 2px solid white
+      background: transparent
+      border-radius: 50px
+      position relative
+      cursor pointer
+      &::after
+        content ""
+        width 5px
+        border-radius: 50%
+        height 5px
+        top 50%
+        left 50%
+        transform translate(-50%, -50%) scale(0,0)
+        position absolute
+        background: white
+        transition: 0.2s
+      &.active
+        &::after
+          transform  translate(-50%, -50%) scale(1,1)
+
+.slider-title
+  padding-top: 20px
+  span
+    font-size: 35px
+    position relative
+    &:before
+      position absolute
+      content: ""
+      width 50px
+      height 1px
+      background: black
+      left -70px
+      top 54%
+      transform translateY(-50%)
+    &:after
+      position absolute
+      content: ""
+      width 50px
+      height 1px
+      background: black
+      right -70px
+      top 54%
+      transform translateY(-50%)
+.page-header
+  background: #f6f8f8;
+  min-height: 100vh;
+  padding-top: 142px;
+  padding-bottom: 100px;
+  +mq(768px)  
+    padding-top 112px
+.inside
+  border-top 1px solid rgba(#b5c0ca, 0.4)
+
+.about-content
+  margin-top: 140px
+  +mq(768px)  
+    margin-top 50px
+  .text-body
+    font-family dejavu
+    font-size: 16px;
+    text-align justify
+    width calc(100% - 340px)
+    margin-top: 40px
+    color #424242
+    line-height: 1.4
+    +mq(992px)
+      width 100%
+.main-title
+  line-height: 1.2
+  position relative
+  &::after
+    position absolute
+    content ""
+    width 100%
+    height 1px
+    background: rgba(#b5c0ca, 0.8)
+    left 0
+    top 13px
+  span
+    display inline-block
+    padding-right: 20px
+    font-size: 22px;
+    color #37536f
+    position relative
+    z-index: 1
+    line-height: 1.2
+    background: #f6f8f8 url("../images/bg.png") repeat;
+    +mq(768px)  
+      background white
+
+.about-files
+  width: 310px
+  margin-top: 43px
+  +mq(992px)
+    width 100%
+  a
+    display block
+    width 100%
+    margin-left: 30px
+    text-transform uppercase
+    padding 20px 30px 18px
+    border-radius: 8px
+    margin-bottom: 20px
+    font-size: 18px
+    color #37536f
+    border 1px solid #b5c0ca;
+    +mq(992px)
+      margin-left: 0
+    &:hover
+      img
+        filter grayscale(0)
+  img
+    margin-bottom: -8px
+    margin-right 20px
+    width: 30px
+    filter: grayscale(100%)
+    transition: 0.4s
+
+.documents-content
+  margin-top 140px
+  +mq(768px)  
+    margin-top 50px
+
+.all-text
+  font-family dejavu
+  font-size 16px
+  line-height: 1.4
+  margin 30px 0
+  +mq(768px)
+    text-align justify
+
+.documents-files
+  a
+    padding: 14px 20px;
+    border 1px solid #b5c0ca;
+    display block
+    margin-bottom: 24px
+    border-radius: 8px
+    height 98px
+    display flex
+    align-items center
+    span
+      background: url(../images/pdf.svg) no-repeat center left
+      background-size: 25px
+      display block
+      padding 5px 0 5px 35px
+      dots(68px,3)
+      height auto
+      max-height: 68px
+      font-family dejavu
+      color: #37536f
+      filter grayscale(90%)
+      transition: 0.5s
+    &:hover
+      span
+        filter grayscale(0)
+
+.each-broadcast
+  margin-top: 40px
+  .image
+    width: 300px;
+    image(300px)
+    border-radius: 50%
+    &::after
+      position absolute
+      content ""
+      width calc(100% - 60px)
+      height calc(100% - 60px)
+      top 50%
+      left 50%
+      border 15px solid rgba(white, 0.5)
+      border-radius: 50%
+      transform: translate(-50%, -50%) scale(1.2,1.2)
+      opacity 0
+      transition: 0.7s
+    &::before
+      position absolute
+      content ""
+      width 350px
+      height 350px
+      top: 44%;
+      display none
+      opacity 0.3
+      left: 44%;
+      transform translate(-50%, -50%) scale(0.8, 0.8)
+      background url(../images/resp-bg.png) no-repeat center center
+      background-size 95%
+      opacity 0
+      transition 0.7s
+    +mq(768px)
+      float none!important
+      margin 100px auto 50px
+      width 260px
+      padding-top 260px
+      &::before
+        display block
+    +mq(480px)
+      float none!important
+      margin 100px auto 50px
+      width 240px
+      padding-top 240px
+      &::before
+        width 300px
+        height 300px
+  &:hover
+    .image
+      &::after
+        transform translate(-50%, -50%) scale(1,1)
+        opacity 1
+      &::before
+        transform translate(-50%, -50%) scale(1,1)
+        opacity 0.3
+    .view-more
+      margin-right: 40px
+      opacity 1
+      transition-delay: 0.2s
+    .title
+      color pink
+  .text
+    width calc(100% - 330px)
+    margin-left: 30px;
+    +mq(768px)
+      width 100%
+      margin-left 0
+      text-align center
+  .title
+    font-size: 20px;
+    margin-top: 25px
+    position relative
+    overflow hidden
+    transition: 0.5s
+    cursor: pointer
+    display block
+    color black
+  .text-body
+    dots(65px,3)
+    font-family dejavu
+    margin-top 20px
+.category-and-time
+  .info
+    margin-right: 40px
+    font-family dejavu
+    margin-top: 10px
+    +mq(768px)
+      float none!important
+      display inline-block
+    &:nth-child(2)
+      position relative
+      +mq(768px)
+        margin-right 0
+      &::after
+        content ""
+        width 1px
+        height 15px
+        position absolute
+        left -21px
+        top 2px
+        background: #1f3645
+    img
+      width 20px
+      margin-bottom: -7px
+
+.broadcast-footer
+  margin-top: 35px
+  position relative
+  .block-inside
+    position relative
+    z-index 1
+  &::after
+    content: ""
+    position absolute
+    left: 0
+    top 20px;
+    width 100%
+    height 1px
+    background: #d7d7d7
+
+  .socials
+    margin-left: 30px
+    max-width 180px
+    +mq(480px)
+      margin-left: calc(50% - 90px)
+      float none!important
+    a
+      display: block
+      width 40px
+      height: 40px
+      background: white
+      border-radius: 50%
+      border 1px solid #d7d7d7
+      display flex
+      transition: 0.6s
+      align-items: center
+      justify-content: center;
+      margin 0 10px
+      &:hover
+        &.icon-yt
+          background: #ff0000
+          img
+            filter brightness(100)
+        &.icon-fb
+          background: #4267b2
+          img
+            filter brightness(100)
+        &.icon-sc
+          background: #ff5500
+          img
+            filter brightness(100)
+      img
+        height 20px
+  .view-more
+    background: white
+    border-radius: 50px;
+    line-height 40px
+    height 40px
+    border 1px solid #d7d7d7
+    padding 0 15px 0 30px
+    font-family dejavu
+    margin-right: 70px
+    cursor: pointer
+    opacity 0
+    transition 0.6s
+    display block
+    color black
+    +mq(480px)
+      display none
+    img
+      width 15px
+      margin-bottom: -4px
+      margin-left: 5px
+      transition: 0.4s
+
+.broadcast-details
+  .cover
+    image(280px)
+  .image-block
+    width 360px
+    +mq(768px)
+      width 100%
+      display flex
+      justify-content center
+    .image
+      margin-top: -100px
+      width 200px
+      border-radius: 50%
+      margin-left: 75px
+      image(200px)
+      +mq(768px)
+        margin-left 0
+      &::after
+        content ""
+        width 100%
+        height 100%
+        top -20px
+        border-radius: 50%
+        left -20px
+        position absolute
+        border 20px solid rgba(#1f3645, 0.11)
+  .information
+    width calc(100% - 360px)
+    +mq(768px)  
+      width 100%
+      text-align center
+    .title
+      font-size: 18px
+      margin-top 20px
+      color pink
+  .share
+    font-size 0
+    width: 100%
+    position relative
+    margin-top: -20px
+    padding-right 10px
+    +mq(768px)  
+      margin-top 50px
+      text-align center
+      &::after
+        position absolute
+        content ''
+        width 100%
+        height 1px
+        left 0 
+        top 50%
+        transform translateY(-50%)
+        background #d7d7d7
+    a
+      display: block
+      width 40px
+      height: 40px
+      background: white
+      position relative
+      z-index: 1
+      border-radius: 50%
+      border 1px solid #d7d7d7
+      display flex
+      transition: 0.6s
+      align-items: center
+      justify-content: center;
+      margin 0 10px
+      +mq(768px)  
+        float none!important
+        display inline-flex
+      &:hover
+        &.icon-yt
+          background: #ff0000
+          img
+            filter brightness(100)
+        &.icon-fb
+          background: #4267b2
+          img
+            filter brightness(100)
+        &.icon-sc
+          background: #ff5500
+          img
+            filter brightness(100)
+      img
+        height 20px
+
+.container
+  max-width 1160px
+  padding 0 20px
+  width calc(100% - 20px)
+  box-sizing border-box
+  +mq(1199px)
+    width 100%!important
+    padding 0 20px
+
+.election
+  margin-top: 80px
+  .el-text
+    font-family: dejavu;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 30px 0 50px;
+.election-title
+  position relative
+  span
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 22px;
+    color: #37536f;
+    position: relative;
+    z-index: 1;
+    line-height: 1.2;
+    background: #f6f8f8 url(../images/bg.png);
+    +mq(768px)  
+      background white
+  &::after
+    width 70%
+    height 1px
+    top 13px
+    background: #b5c0ca
+    content ""
+    position absolute
+    left 50%
+    transform translateX(-50%)
+    +mq(992px)
+      width 100%
+.el-pdf
+  border 1px solid #b5c0ca
+  border-top none
+  display block
+  transition: 0.3s
+  filter grayscale(100%)
+  &:hover
+    filter grayscale(0)
+    background: white
+  &:first-child
+    border-top 1px solid #b5c0ca
+  .image
+    padding 11px 15px 5px
+    width 61px
+    border-right 1px solid #b5c0ca
+  img
+    width 30px
+  .date
+    font-family dejavu
+    width 110px
+    padding 18px 15px 12px
+    color #c32d2e
+    +mq(600px)
+      display none
+  .text
+    padding 18px 15px 12px
+    border-left 1px solid #b5c0ca
+    font-family dejavu
+    color #c32d2e
+    width calc(100% - 171px)
+    +mq(600px)
+      width calc(100% - 61px)
+      border-left: none
+
+.broadcast-details
+  &.category-and-time
+    margin-left: -3px
+  .text-body
+    font-family dejavu
+    font-size: 14px
+    margin-top: 20px
+
+.election
+  &.past-broadcasts
+    .election-title
+      margin-top 60px
+      &::after
+        width 100%
+
+.past-broadcast
+  transition: 0.5s
+  margin-bottom: 30px
+  display block
+  // background: #f8f9fa
+  background: white
+  .image
+    image(70%)
+  .yt-play
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    img
+      width 40px
+  .title
+    color black
+    transition: 0.4s;
+  .text
+    padding 15px
+  .date
+    color black
+  &:hover
+    box-shadow: 0 0 20px rgba(black, 0.2)
+    .title
+      color pink
+.past-broadcasts-list
+  margin-top: 50px
+.five-music-block
+  display: flex
+  align-items center
+  justify-content: center
+  height calc(100vh - 430px)
+  +mq(768px)
+    height calc(100vh - 350px)
+.music-block
+  margin 20px 15px
+  cursor pointer
+  position relative
+  border 1px solid white
+  border-radius: 500px
+  &::after
+    position absolute
+    width calc(100% + 30px)
+    height calc(100% + 30px)
+    content ""
+    border 15px solid rgba(black, 0.1)
+    top 50%
+    left 50%
+    transition 0.6s
+    transform translate(-50%, -50%) scale(0.8,0.8)
+    border-radius: 50%
+    opacity 0
+    +mq(768px)
+      transform translate(-50%, -50%) scale(1,1)
+      opacity 1
+  &:hover::after
+    transform translate(-50%, -50%) scale(1,1)
+    opacity 1
+  .image
+    width: 230px
+    image(230px)
+    border-radius: 50%
+    +mq(1400px)
+      width 200px
+      padding-top 200px
+    +mq(1200px)
+      width 160px
+      padding-top 160px
+    +mq(768px)
+      width 200px
+      padding-top 200px
+    +mq(500px)
+      width 160px
+      padding-top 160px
+  &:first-child
+    transform translateX(40px) scale(0.6, 0.6)
+    +mq(992px)
+      display none
+  &:nth-child(5)
+    transform translateX(-40px) scale(0.6, 0.6)
+    +mq(992px)
+      display none
+  &:nth-child(2),
+  &:nth-child(4)
+    transform scale(0.8, 0.8)
+    +mq(768px)
+      display none
+
+.positive-socials
+  position fixed
+  right 25px
+  top 50%
+  z-index: 10
+  transform translateY(-50%)
+  +mq(1300px)
+    display none
+  &::after
+    position absolute
+    width 1px
+    background: black
+    height 40px
+    top -40px
+    left 50%
+    transform translateX(-50%)
+    content ""
+  &::before
+    position absolute
+    width 1px
+    background: black
+    height 40px
+    bottom -40px
+    content ""
+    left 50%
+    transform translateX(-50%)
+  a
+    display flex
+    margin 10px 0
+    align-items center
+    justify-content: center
+    width 35px
+    height 35px
+    border-radius: 50%
+    background: white
+    filter grayscale(100%)
+    border 1px solid #d7d8d8
+    transition: 0.3s
+    &:hover
+      filter grayscale(0)
+    img
+      width 16px
+
+.socials-share
+  position fixed
+  border: 1px solid #d7d8d8
+  top 50%
+  background: white
+  padding 10px 10px
+  border-radius: 50px
+  left 45px
+  transform: translateY(-50%)
+  +mq(1300px)
+    display none
+  a
+    display block
+    line-height: 1
+    margin 5px 0
+    transition: 0.3s
+    filter: grayscale(100%)
+    &:hover
+      filter grayscale(0)
+  img
+    width 16px
+  span
+    display block
+    line-height 1
+    margin-top: 10px
+    opacity 0.3
+
+.live-section
+  max-width 800px
+  width calc(100% - 200px)
+  margin 0 auto
+  +mq(768px)
+    width calc(100% - 110px)
+  .play-music
+    background: white;
+    display block
+    width 60px
+    height 60px
+    border 2px solid #37536f
+    border-radius: 50%
+    display flex
+    align-items: center
+    justify-content: center
+    position relative
+    left 50%
+    top -30px
+    transform translateX(-50%)
+    background white url(../images/play1.svg) no-repeat center center!important
+    background-size 40px!important
+    .animation
+      position absolute
+      width 100%
+      height 100%
+      top 0
+      left 0
+      text-align center
+      display none
+      align-items center
+      justify-content center
+      span
+        display inline-block
+        width 5px
+        background pink
+        height 4px
+        animation playAnimation1 1s infinite
+        &:first-child
+          animation playAnimation2 0.8s infinite
+          animation-delay 0.2s
+        &:nth-child(3)
+          animation playAnimation2 1s infinite
+          animation-delay 0.3s
+    &.active
+      background white!important
+      .animation
+        display flex
+      &:hover
+        background white url(../images/stop1.svg) no-repeat center center!important
+        background-size 40px!important
+        .animation
+          display none
+.music-info
+  max-width: 600px
+  margin 0 auto
+  .title
+    font-size: 26px
+    color blue
+    +mq(768px)
+      font-size 16px
+  .song
+    +mq(768px)
+      font-size 12px
+.tooltip-pink
+  background: pink
+  // margin-top: 40px
+
+.music-cat
+  text-align: center
+  font-size: 12px
+  color rgba(black, 0.5)
+  cursor: pointer
+  &.active
+    color: pink;
+  .live
+    text-transform uppercase
+    color white
+    background: #426689
+    display inline-block
+    letter-spacing: 1px
+    padding 5px 20px 3px 10px
+    border-radius: 5px
+    position relative
+    transition: 0.4s
+    &:hover,
+    &.active
+      background: pink
+    &::after
+      position: absolute
+      content ""
+      width 5px
+      height 5px
+      border-radius: 10px
+      background: white
+      right 10px
+      top 50%
+      transform translateY(-50%)
+
+.categories
+  padding: 12px 60px 10px
+  background #ecf0f1
+
+.owl-content
+  width calc(100% - 61px)
+.owl-prev
+  background: transparent!important
+  position: absolute;
+  left: -110px;
+  padding: 7px 13px 0 2px!important;
+  top: -8px;
+  border-radius: 0!important;
+  border-right: 1px solid rgba(black, 0.1);
+  img
+    width 20px
+    transform rotate(180deg)
+
+.owl-next
+  background: transparent!important
+  position: absolute;
+  right: -54px;
+  padding: 7px 2px 0 13px!important;
+  top: -8px;
+  border-radius: 0!important;
+  border-left: 1px solid rgba(black, 0.1);
+  img
+    width 20px
+.owl-content
+  .music-cat
+    line-height: 1.8
+
+.music-list-fixed
+  .music-list
+    height calc(100vh - 270px)
+    overflow: auto
+    +mq(768px)
+      height calc(100vh - 220px)
+    &::-webkit-scrollbar
+      width: 5px
+      background: #ecf0f1
+    &::-webkit-scrollbar-thumb
+      border-radius: 50px
+      background: pink;
+
+.slider-bg
+  width 100%
+  position absolute
+  top 0
+  opacity .17
+  left 0
+  opacity 0
+  transition 0.8s
+  .item
+    .image
+      image(calc(100vh - 320px))
+      +mq(768px)
+        padding-top calc(100vh - 240px)
+  &.active
+    opacity 0.17
+
+.backdrop
+  background-color: pink;
+  padding: 5px
+  
+.mus-prev
+  width: 12px;
+  height: 12px;
+  display: block;
+  background: url(../../assets/images/previous-track.svg);
+  background-size: 100%;
+  transition: 0.1s;
+  border: none;
+  filter: invert(100%)
+  margin-top: 9px;
+  cursor: pointer;
+  position absolute
+  left 0
+  top 25px
+  opacity 1
+  &.disable{
+    opacity 0.2
+  }
+.mus-next
+  transform: rotate(180deg);
+  width: 12px;
+  height: 12px;
+  display: block;
+  background: url(../../assets/images/previous-track.svg);
+  background-size: 100%;
+  border: none;
+  transition: 0.1s;
+  margin-top: 9px;
+  cursor: pointer;
+  filter: invert(100%)
+  position absolute
+  left 67px
+  opacity 1
+  top 25px
+  &.disable{
+    opacity 0.2
+  }
+
+.mus-play
+  width: 14px
+  height 14px
+  margin: 0 15px
+  display: block
+  margin-top 9px
+  background-size: 100%
+  transform rotate(0deg)
+  background: url(../../assets/images/play.svg)
+  border none
+  filter invert(100%)
+  cursor: pointer
+  transition 0.1s
+  position absolute
+  left 19px
+  opacity 1
+  top 25px
+  &.active
+    transform rotate(180deg)
+    background: url(../../assets/images/pause.svg)
+    background-size: 100%
+  &:hover
+    opacity 1
+
+.live-play
+  position relative
+  .live-title
+    position absolute
+    text-transform uppercase
+    color #37536f 
+    left: -35px;
+    top: -10px;
+    &::after
+      position absolute
+      content ''
+      width 4px
+      height 4px
+      background-color pink
+      border-radius 50%
+      right: -12px;
+      top: 8px;
+
+.audio-socials
+  position: absolute;
+  border: 2px solid rgba(0,0,0,0.04);
+  bottom: 2px;
+  background: #f6f8f8;
+  border-radius: 50px;
+  right: -56px;
+  height 45px
+  overflow hidden
+  width 46px
+  transition 0.3s
+  +mq(768px)
+    display none
+  &:hover
+    height 125px
+  div
+    padding: 13px 13px 10px;
+    // height 125px;
+    position absolute
+    left 0 
+    bottom 0
+    right 0
+  a
+    display block
+    line-height: 1
+    margin 5px 0
+    transition: 0.3s
+    filter: grayscale(100%)
+    &:hover
+      filter grayscale(0)
+  img
+    width 16px
+  span
+    display block
+    line-height 1
+    margin-top: 13px
+    opacity 0.3
+
+.music-tooltip{
+  position absolute
+  width 300px
+  padding 10px
+  top 100%
+  background pink
+  color white
+  text-align center
+  left 50%
+  z-index: 1
+  transition 0.5s
+  opacity 0
+  transform translateX(-50%) translateY(-10px)
+  &::after{
+    content ''
+    position absolute
+    width 15px
+    height 10px
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background pink
+    top -9px
+    left 50%
+    transform translateX(-50%)
+  }
+}
+
+.music-block:hover
+  .music-tooltip
+    opacity 1
+    transform translateX(-50%) translateY(0px)
+
+.bluse-fest
+  position absolute
+  bottom: 25px;
+  left: 34px;
+  +mq(768px)
+    display none
+  &::after
+    content ''
+    position absolute
+    width 1px
+    height 30px
+    background orange
+    bottom 0 
+    right 0
+  &::before
+    content ''
+    position absolute
+    height 1px
+    width 45%
+    background orange
+    bottom 0 
+    right 0
+  span
+    color white
+    letter-spacing 2px
+    font-size 20px
+    padding 10px 21px
+    display block
+    text-shadow 0 0 3px rgba(black, 0.9)
+    position relative
+    &::after
+      content ''
+      position absolute
+      width 1px
+      height 30px
+      background orange
+      top 0 
+      left 0
+    &::before
+      content ''
+      position absolute
+      height 1px
+      width 45%
+      background orange
+      top 0 
+      left 0
+
+.dot-tooltip{
+  position absolute
+  width 150px
+  padding 5px 10px
+  top -12px
+  background pink
+  color white
+  left 30px
+  z-index: 1
+  transition 0.5s
+  opacity 0
+  transform translateX(-10px)
+  &::after{
+    content ''
+    position absolute
+    width 10px
+    height 6px
+    -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background pink
+    left -6px
+    top 50%
+    transform translateY(-50%) rotate(30deg)
+  }
+}
+.select-mode
+  +mq(768px)
+    display none
+  button:hover
+    .dot-tooltip
+      opacity 1
+      transform translateX(0)
+  
+.menu-list-close
+  width 20px
+  height 20px
+  background url(../images/close.svg) no-repeat center center
+  background-size 100%
+  filter invert(100%)
+  position absolute
+  right: 22px;
+  top: 22px;
+  border: none;
+  z-index: 11;
+  display none
+  +mq(768px)
+    display block
+
+.page-bg
+  background url(../images/bg.png) repeat
+  +mq(768px)
+    background white
+    padding-bottom 150px
+.map
+  text-align center
+  margin-top 50px
+  img
+    width 60%
+    +mq(768px)
+      width 100%
+  
+
+.live-block
+  position fixed
+  display none
+  bottom 0
+  right 0
+  left 0
+  z-index: 100
+  background #f2f2f2
+  padding 20px 0 12px
+  +mq(768px)
+    display block
+  .music-info
+    text-align left
+    margin-bottom 20px
+  .play-music
+    left auto
+    right -32px
+    transform none
+    top -5px
+    float right
+    width 50px
+    height 50px
+    background: #fff url(../images/play1.svg) no-repeat center center !important;
+    border: 2px solid #e5e5e5;
+    background-size: 40px !important;
+  .live-title
+    top -10px
+  .live-play 
+    .audioplayer
+      margin-top 0!important
+  .music-info
+    position relative
+    padding-left 20px
+    width calc(100% - 50px)
+    .title
+      line-height 1.3
+  .image
+    width 40px
+    image(40px)
+    position absolute
+    left -34px
+    
+
+.pagination
+  margin 80px 0 0
+.page-more
+  background white
+  border-radius 50px
+  border 1px solid #d7d7d7
+  padding 20px 40px 15px
+  font-family dejavu
+  transition 0.3s
+  img
+    width 25px
+    margin-bottom -6px
+    margin-right 5px
+  &:hover
+    background rgba(black, 0.05)
+
+.loader
+  width 100%
+  height 100vh
+  background white
+  position fixed
+  z-index: 1200
+  display flex
+  top 0
+  left 0
+  align-items center
+  justify-content center
+  transition 0.5s
+  &.disable
+    opacity 0
+    z-index: -100
+  img
+    width 100px
+
+.live-play
+  .audio-socials
+    span
+      opacity: 1;
+      
+
+.range-field
+  .thumb
+    display none
+    
+.volume-slider
+  margin 0px 0px 0 14px
+  display flex
+  width 20px
+  overflow hidden
+  align-items center
+  transition 0.3s
+  height 32px
+  &:hover
+    width 100px
+  form
+    width 70px
+
+.volume-images
+  display flex
+  align-items center
+  height 20px
+  cursor pointer
+  img
+    height 15px
+    margin 0 12px 0 0
+    opacity 0.7
+    &:first-child
+      height 20px
+    &:nth-child(2)
+      display none
+  &.active
+    img
+      &:first-child
+        display none
+      &:nth-child(2)
+        display inline-block
+      
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: pink;
+  width 12px
+  height 12px
+  margin-top -4px
+}
+input[type=range]::-moz-range-thumb {
+  background-color: pink;
+  width 12px
+  height 12px
+  margin-top -4px
+}
+input[type=range]::-ms-thumb {
+  background-color: pink;
+  width 12px
+  height 12px
+  margin-top -4px
+}
+
+.audioplayer-volume
+  display none
+
+.main-audio
+  transition 0.3s
+  width calc(100% - 20px)
+
+.main-audio-next
+  margin-left 0
+
+input[type=range]
+  border none
+
+.noUI-background{
+  background: red!important ;
+}
+
+.menu-audio
+  &:hover
+    .main-audio
+      width calc(100% - 100px)
+    .volume-slider
+      width 100px
+  .volume-images
+    img
+      filter invert(10)
+      opacity 1
+  input[type=range]
+    height 52px
+    
+
+input[type=range] {
+  -webkit-appearance: none;
+  position: relative
+}
+ input[type=range]::-webkit-slider-runnable-track {
+ width: 300px;
+ height: 2px;
+ border: none;
+ border-radius: 3px
+}
+ input[type=range]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ border: none;
+ height: 12px;
+ width: 12px;
+ border-radius: 510%;
+ background: pink;
+ border: 2px solid pink;
+ margin-top: -5px;
+ cursor: pointer
+}
+ .focused::-webkit-slider-thumb {
+ box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
+}
+ .clicked::-webkit-slider-thumb {
+ -webkit-transform: scale(1.5)
+}
+input[type=range]:focus { outline: none }
+ .rangeM input[type=range].disabled::-webkit-slider-runnable-track {
+ background: pink!important
+}
+ .rangeM input[type=range]::-webkit-slider-thumb {
+ background: pink!important;
+ border-color: pink!important
+}
+
+.range:hover input[type=range]:before {
+  color: white;
+  content: '50';
+  position: absolute;
+  font-family: Roboto Slab;
+  top: -49px;
+  background: pink!important;
+  padding: 8px 0 3px;
+  font-size: 14px;
+  width: 30px;
+  text-align: center;
+  border-radius: 100% 100% 0 0
+}
+
+.range:hover input[type=range]:after {
+  content: '';
+  position: absolute;
+  top: -19px;
+  left: 50px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 8px solid pink!important;
+  font-family: Roboto Slab
+}
+#range1:hover input[type=range]:after,
+#range1:hover input[type=range]:before,
+#range2:hover input[type=range]:after,
+#range2:hover input[type=range]:before
+#range3:hover input[type=range]:after,
+#range3:hover input[type=range]:before
+  opacity 0!important
+  
+.live-audio
+  width calc(100% - 50px)
+  margin-top 8px
+  transition 0.3s
+  
+.live-slider-img
+  >div
+    margin-right 15px
+    display flex
+    align-items center
+    justify-content center
+    border: 2px solid rgba(0,0,0,0.04);
+    background: #f6f8f8;
+    border-radius: 50px;
+    height: 45px;
+    overflow: hidden;
+    width: 46px;
+    transition: 0.3s;
+    img
+      margin 0
+.live-volume-slider
+  width 50px
+  margin-top -25px
+  height 50px
+  +mq(768px)
+    position absolute
+    right -40px
+
+.live-section
+  &:hover
+    .live-audio
+      width calc(100% - 140px)
+    .live-volume-slider
+      width 140px
+  &.index-page
+    .audioplayer-time-duration
+      right 40px

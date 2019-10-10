@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Positive</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/icon" href="assets/images/favico.ico">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/audioplayer.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	
+	<!-- header start -->
+
+	<header id="navbar">
+		<a href="index.html" class="logo">
+			<img src="assets/images/logo.png" alt="logo">
+	  </a>
+	  <div class="music-control">
+	    <div class="image left" style="background-image: url(assets/images/11.jpg)"></div>
+	    <div class="title left">
+	      <div class="author truncate">
+	        The Beatles The BeatlesThe BeatlesThe BeatlesThe Beatles
+	      </div>
+	      <div class="song truncate">
+	        Hey Jude
+	      </div>
+	    </div>
+	    <div class="player-options left">
+	      <button class="prev left"></button>
+	      <button class="pause left"></button>
+	      <button class="next left"></button>
+	      <div class="left volume-slider">
+	      	<div class="volume-images left">
+	      		<img src="assets/images/volume1.svg" alt="">
+	      		<img src="assets/images/volume2.svg" alt="">
+	      	</div>
+					<form action="#" class="left">
+						<p class="range-field">
+							<input type="range" id="test5" min="0" max="100" />
+						</p>
+					</form>
+					<div class="clear"></div>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+	    <!-- <div class="sound"></div> -->
+	    <button class="music-menu desktop left"></button>
+	    <button class="music-menu responsive left"></button>
+	    <div class="clear"></div>
+	  </div>
+	  <div class="clear"></div>
+	</header>
+
+	<button class="burger-menu">
+	  <div>
+	    <span></span>
+	    <span></span>
+	    <span></span>
+	  </div>
+	</button>
+
+	<div class="nav-fixed">
+	  <div class="inside">
+	    <div class="menu-title">menu</div>
+	    <div class="languages">
+	      <a href="">
+	        ქარ
+	      </a>
+	      <a href="" class="active">
+	        eng
+	      </a>
+	    </div>
+	    <ul>
+	        <li>
+	          <a href="index.html" class="active" data-text="Home">Home</a>
+	        </li>
+	        <li>
+	          <a href="about.html" data-text="About Us">About Us</a>
+	        </li>
+	        <li>
+	          <a href="documents.html" data-text="Documents">Documents</a>
+	        </li>
+	        <li>
+	          <a href="broadcast.html" data-text="Broadcasting">Broadcasting</a>
+	        </li>
+	    </ul>
+	    <div class="fixed-contact">
+	      <a href="">
+	        contact@positive.ge
+	      </a>
+	      <a href="">
+	        +995 555 123 456
+	      </a>
+	    </div>
+	    <div class="platform">
+	      <a href="">
+	        <img src="assets/images/android.svg" alt="">
+	      </a>
+	      <a href="">
+	        <img src="assets/images/apple.svg" alt="">
+	      </a>
+	      <a href="">
+	        <img src="assets/images/windows.svg" alt="">
+	      </a>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="music-list-close"></div>
+	<div class="music-list-fixed">
+	  <div class="inside">
+	    <div class="cover">
+	    	<button class="menu-list-close"></button>
+	      <div class="blur-cover">
+	        <div class="cover-img"
+	            style="background-image: url(assets/images/11.jpg)">
+	        </div>
+	      </div>
+	      <div class="info">
+	        <div class="image left"
+	            style="background-image: url(assets/images/11.jpg)">
+	        </div>
+	        <div class="title left"
+	        	data-id="0"
+	        >
+	          <div class="author">
+	            The Beatles
+	          </div>
+	          <div class="song">
+	            Hey Jude
+	          </div>
+	        </div>
+	        <div class="clear"></div>
+	        <div class="menu-audio">
+
+						<div id="wrapper">
+							<button class="mus-prev"></button>
+							<button class="mus-play"></button>
+							<button class="mus-next"></button>
+							<div class="main-audio left">
+								<audio preload="auto" controls id="mainAudio">
+									<source class="audio-src" src="http://digital.akauk.com/utils/musicPlayer/data/Tequila%2010%20Seconds.mp3">
+								</audio>
+							</div>
+							<div class="left volume-slider main-audio-next">
+				      	<div class="volume-images left">
+				      		<img src="assets/images/volume1.svg" alt="">
+				      		<img src="assets/images/volume2.svg" alt="">
+				      	</div>
+								<form action="#" class="left">
+									<p class="range-field">
+										<input type="range" id="test5" min="0" max="100" />
+									</p>
+								</form>
+								<div class="clear"></div>
+				      </div>
+				      <div class="clear"></div>
+						</div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="categories">
+	      <div class="category-live left">
+	        <div class="music-cat">
+	          <div class="live desktop" 
+	          	data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg"
+	          	data-title="live"
+	          	data-song=""
+	          	data-img="https://pbs.twimg.com/profile_images/631535796563116032/X6mbiozW_400x400.jpg"
+	          	data-id="0"
+	          >
+	            live
+	          </div>
+	        </div>
+	      </div>
+	      <div class="left owl-content">
+	      	<div class="owl-carousel owl-theme">
+    				<div class="item">
+    					<div class="music-cat active">
+	              Pop
+	            </div>
+    				</div>
+    				<div class="item">
+    					<div class="music-cat">
+	              Pop
+	            </div>
+    				</div>
+    				<div class="item">
+    					<div class="music-cat">
+	              Pop
+	            </div>
+    				</div>
+    				<div class="item">
+    					<div class="music-cat">
+	              Pop
+	            </div>
+    				</div>
+    				<div class="item">
+    					<div class="music-cat">
+	              Pop
+	            </div>
+    				</div>
+    				<div class="item">
+    					<div class="music-cat">
+	              Pop
+	            </div>
+    				</div>
+    				<div class="item">
+    					<div class="music-cat">
+	              Pop
+	            </div>
+    				</div>
+    				
+    			</div>
+	      </div>
+	      <div class="clear"></div>
+	    </div>
+	    <div class="music-list">
+	      <div class="each-music"
+    		data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg"
+        	data-title="The Beatles"
+        	data-song="Hey Jude"
+        	data-img="assets/images/12.jpg"
+        	data-id="1"
+        	>
+	        <div class="image left" style="background-image: url(assets/images/12.jpg)"></div>
+	        <div class="title left">
+	          <div class="author truncate">
+	            The Beatles
+	          </div>
+	          <div class="song truncate">
+	            Hey Jude
+	          </div>
+	        </div>
+	        <div class="time left" data-text="04:40">
+	          04:40
+	        </div>
+	        <div class="clear"></div>
+	      </div>
+	      <div class="each-music"
+    		data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg"
+        	data-title="Marina and the diamonds"
+        	data-song="Hey Jude"
+        	data-img="assets/images/11.jpg"
+        	data-id="2"
+        	>
+	        <div class="image left" style="background-image: url(assets/images/11.jpg)"></div>
+	        <div class="title left">
+	          <div class="author truncate">
+	            Marina and the diamondsMarina and the diamonds
+	          </div>
+	          <div class="song truncate">
+	            Hey Jude
+	          </div>
+	        </div>
+	        <div class="time left" data-text="04:40">
+	          04:40
+	        </div>
+	        <div class="clear"></div>
+	      </div>
+	      <div class="each-music"
+    		data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg"
+        	data-title="Marina and the diamonds"
+        	data-song="Hey Jude"
+        	data-img="assets/images/11.jpg"
+        	data-id="3"
+        	>
+	        <div class="image left" style="background-image: url(assets/images/11.jpg)"></div>
+	        <div class="title left">
+	          <div class="author truncate">
+	            Marina and the diamondsMarina and the diamonds
+	          </div>
+	          <div class="song truncate">
+	            Hey Jude
+	          </div>
+	        </div>
+	        <div class="time left" data-text="04:40">
+	          04:40
+	        </div>
+	        <div class="clear"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="positive-socials">
+    <a href="">
+      <img src="assets/images/fb.svg" alt="">
+    </a>
+    <a href="">
+      <img src="assets/images/youtube.svg" alt="">
+    </a>
+    <a href="">
+      <img src="assets/images/soundcloud.svg" alt="">
+    </a>
+    <a href="">
+      <img src="assets/images/soundcloud.svg" alt="">
+    </a>
+	</div>
+
+	<!-- main start -->
+
+	<main>
+
+
+<!-- content start -->
+
+
+<div id="barba-wrapper">
+  	<div class="barba-container">
+
+		<div class="socials-share">
+		  <a href="">
+		    <img src="assets/images/fb.svg" alt="">
+		  </a>
+		  <a href="">
+		    <img src="assets/images/soundcloud.svg" alt="">
+		  </a>
+		  <a href="">
+		    <img src="assets/images/fb.svg" alt="">
+		  </a>
+		  <span>
+		    <img src="assets/images/share.svg" alt="">
+		  </span>
+		</div>
+
+
+		<section class="page-header page-bg">
+		  <div class="inside">
+		    <div class="container">
+		      <div class="documents-content">
+		        <div class="main-title">
+		          <span>გადაცემები</span>
+		        </div>
+		        <div class="text">
+		          <div class="all-text">
+		            რადიო პოზიტივი 2012 წლის აპრილიდან 104.3FM სიხშირეზე მაუწყებლობს. იგი პირველი და ერთადერთი რადიოსადგურია საქართველოში, რომლის მიზნობრივ აუდიტორიას ქალბატონები წარმოადგენენ.
+		          </div>
+
+		          <div class="broadcast-list">
+		            <div class="each-broadcast" href="broadcast-details.html">
+					  <div class="image left" style="background-image: url(assets/images/12.jpg)"></div>
+					  <div class="text left">
+					    <a href="broadcast-details.html" class="title truncate">
+					      ვარშავის კონგრესი
+					    </a>
+					    <div class="category-and-time">
+					      <div class="left info">
+					        <img src="assets/images/microphone.svg" alt="">
+					        შემეცნებითი
+					      </div>
+					      <div class="left info" *ngIf="broadcast?.time">
+					        <img src="assets/images/clock.svg" alt="">
+					        ორშაბათი 18 სთ
+					      </div>
+					      <div class="clear"></div>
+					    </div>
+					    <div class="text-body">
+					      რადიო პოზიტივი 2012 წლის აპრილიდან 104.3FM სიხშირეზე მაუწყებლობსიგი პირველი და ერთადერთი რადიოსადგურია საქართველოში,რომლის მიზნობრივ აუდიტორიას ქალბატ
+					    </div>
+					    <div class="broadcast-footer">
+					      <div class="block-inside">
+					        <div class="socials left">
+					          <a href="{{broadcast.facebook}}" target="_blank" class="left icon-fb">
+					            <img src="assets/images/fb.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.youtube}}" target="_blank" class="left icon-yt">
+					            <img src="assets/images/youtube.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.soundcloud}}" target="_blank" class="left icon-sc">
+					            <img src="assets/images/soundcloud.svg" alt="">
+					          </a>
+					          <div class="clear"></div>
+					        </div>
+					        <a href="broadcast-details.html" class="view-more right">
+					          ვრცლად
+					          <img src="assets/images/right-arrow.svg" alt="">
+					        </a>
+					        <div class="clear"></div>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="clear"></div>
+					</div>
+		            <div class="each-broadcast" href="broadcast-details.html">
+					  <div class="image left" style="background-image: url(assets/images/12.jpg)"></div>
+					  <div class="text left">
+					    <a href="broadcast-details.html" class="title truncate">
+					      ვარშავის კონგრესი
+					    </a>
+					    <div class="category-and-time">
+					      <div class="left info">
+					        <img src="assets/images/microphone.svg" alt="">
+					        შემეცნებითი
+					      </div>
+					      <div class="left info" *ngIf="broadcast?.time">
+					        <img src="assets/images/clock.svg" alt="">
+					        ორშაბათი 18 სთ
+					      </div>
+					      <div class="clear"></div>
+					    </div>
+					    <div class="text-body">
+					      რადიო პოზიტივი 2012 წლის აპრილიდან 104.3FM სიხშირეზე მაუწყებლობსიგი პირველი და ერთადერთი რადიოსადგურია საქართველოში,რომლის მიზნობრივ აუდიტორიას ქალბატ
+					    </div>
+					    <div class="broadcast-footer">
+					      <div class="block-inside">
+					        <div class="socials left">
+					          <a href="{{broadcast.facebook}}" target="_blank" class="left icon-fb">
+					            <img src="assets/images/fb.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.youtube}}" target="_blank" class="left icon-yt">
+					            <img src="assets/images/youtube.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.soundcloud}}" target="_blank" class="left icon-sc">
+					            <img src="assets/images/soundcloud.svg" alt="">
+					          </a>
+					          <div class="clear"></div>
+					        </div>
+					        <a href="broadcast-details.html" class="view-more right">
+					          ვრცლად
+					          <img src="assets/images/right-arrow.svg" alt="">
+					        </a>
+					        <div class="clear"></div>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="clear"></div>
+					</div>
+		            <div class="each-broadcast" href="broadcast-details.html">
+					  <div class="image left" style="background-image: url(assets/images/12.jpg)"></div>
+					  <div class="text left">
+					    <a href="broadcast-details.html" class="title truncate">
+					      ვარშავის კონგრესი
+					    </a>
+					    <div class="category-and-time">
+					      <div class="left info">
+					        <img src="assets/images/microphone.svg" alt="">
+					        შემეცნებითი
+					      </div>
+					      <div class="left info" *ngIf="broadcast?.time">
+					        <img src="assets/images/clock.svg" alt="">
+					        ორშაბათი 18 სთ
+					      </div>
+					      <div class="clear"></div>
+					    </div>
+					    <div class="text-body">
+					      რადიო პოზიტივი 2012 წლის აპრილიდან 104.3FM სიხშირეზე მაუწყებლობსიგი პირველი და ერთადერთი რადიოსადგურია საქართველოში,რომლის მიზნობრივ აუდიტორიას ქალბატ
+					    </div>
+					    <div class="broadcast-footer">
+					      <div class="block-inside">
+					        <div class="socials left">
+					          <a href="{{broadcast.facebook}}" target="_blank" class="left icon-fb">
+					            <img src="assets/images/fb.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.youtube}}" target="_blank" class="left icon-yt">
+					            <img src="assets/images/youtube.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.soundcloud}}" target="_blank" class="left icon-sc">
+					            <img src="assets/images/soundcloud.svg" alt="">
+					          </a>
+					          <div class="clear"></div>
+					        </div>
+					        <a href="broadcast-details.html" class="view-more right">
+					          ვრცლად
+					          <img src="assets/images/right-arrow.svg" alt="">
+					        </a>
+					        <div class="clear"></div>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="clear"></div>
+					</div>
+		            <div class="each-broadcast" href="broadcast-details.html">
+					  <div class="image left" style="background-image: url(assets/images/12.jpg)"></div>
+					  <div class="text left">
+					    <a href="broadcast-details.html" class="title truncate">
+					      ვარშავის კონგრესი
+					    </a>
+					    <div class="category-and-time">
+					      <div class="left info">
+					        <img src="assets/images/microphone.svg" alt="">
+					        შემეცნებითი
+					      </div>
+					      <div class="left info" *ngIf="broadcast?.time">
+					        <img src="assets/images/clock.svg" alt="">
+					        ორშაბათი 18 სთ
+					      </div>
+					      <div class="clear"></div>
+					    </div>
+					    <div class="text-body">
+					      რადიო პოზიტივი 2012 წლის აპრილიდან 104.3FM სიხშირეზე მაუწყებლობსიგი პირველი და ერთადერთი რადიოსადგურია საქართველოში,რომლის მიზნობრივ აუდიტორიას ქალბატ
+					    </div>
+					    <div class="broadcast-footer">
+					      <div class="block-inside">
+					        <div class="socials left">
+					          <a href="{{broadcast.facebook}}" target="_blank" class="left icon-fb">
+					            <img src="assets/images/fb.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.youtube}}" target="_blank" class="left icon-yt">
+					            <img src="assets/images/youtube.svg" alt="">
+					          </a>
+					          <a href="{{broadcast.soundcloud}}" target="_blank" class="left icon-sc">
+					            <img src="assets/images/soundcloud.svg" alt="">
+					          </a>
+					          <div class="clear"></div>
+					        </div>
+					        <a href="broadcast-details.html" class="view-more right">
+					          ვრცლად
+					          <img src="assets/images/right-arrow.svg" alt="">
+					        </a>
+					        <div class="clear"></div>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="clear"></div>
+					</div>
+		          </div>
+
+		          <section class="pagination center-align">
+								<button class="page-more">
+									<img src="assets/images/load.png">
+									ჩატვირთვა
+								</button>
+							</section>
+
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</section>
+	</div>
+</div>
+
+
+<!-- content end -->
+
+
+<div class="live-section index-page center-align">
+  <button class="play-music"
+    data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/new_year_dubstep_minimix.ogg"
+    data-title="live"
+    data-song=""
+    data-img="https://pbs.twimg.com/profile_images/631535796563116032/X6mbiozW_400x400.jpg"
+    data-id="0">
+    <div class="animation">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>  
+  </button>
+  <div class="live-play">
+    <span class="live-title">
+      live
+    </span>
+    <div class="left live-audio">
+      <audio preload="auto" controls id="indexAudio" muted>
+        <source src="http://digital.akauk.com/utils/musicPlayer/data/Tequila%2010%20Seconds.mp3">
+      </audio>
+    </div>
+    <div class="left volume-slider live-volume-slider main-audio-next">
+      <div class="volume-images live-slider-img left">
+        <div>
+          <img src="assets/images/volume1.svg" alt="">
+          <img src="assets/images/volume2.svg" alt="">
+        </div>
+      </div>
+      <form action="#" class="left">
+        <p class="range-field">
+          <input type="range" id="test5" min="0" max="100" />
+        </p>
+      </form>
+      <div class="clear"></div>
+    </div>
+    <div class="audio-socials">
+      <div>
+        <a href="">
+          <img src="assets/images/fb.svg" alt="">
+        </a>
+        <a href="">
+          <img src="assets/images/soundcloud.svg" alt="">
+        </a>
+        <!-- <a href="">
+          <img src="assets/images/fb.svg" alt="">
+        </a> -->
+        <span>
+          <img src="assets/images/share-dark.svg" alt="">
+        </span>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="music-info center-align">
+    <div class="title truncate">
+      Curtis Handing
+    </div>
+    <div class="song truncate">
+      How I Met Your Mother and other disasters
+    </div>
+  </div>
+</div>
+
+
+</main>
+
+<!-- main end -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+<script type="text/javascript" src="assets/js/wNumb.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/13.1.4/nouislider.js"></script>
+<script src="assets/js/materialize.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/smoothscroll.min.js"></script>
+<script src='assets/js/aos.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.countup.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/audioplayer.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
+

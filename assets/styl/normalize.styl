@@ -1,0 +1,117 @@
+@import "animations";
+@import "variables"
+@import "mixins"
+@import "fonts"
+
+*
+	margin 0
+	padding 0
+	list-style-type none
+	outline none
+	font-family bpg_arial_caps
+
+body{
+  background: #f6f8f8;
+}
+
+nav
+	background transparent
+	box-shadow none
+	width auto
+	li
+		line-height
+		&:hover
+			a
+				background transparent
+	ul
+		li.active
+			background transparent
+		a
+			padding 0
+			line-height 20px
+
+.clear{
+	clear both
+}
+button:focus{
+	background-color transparent!important
+}
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid transparent;
+    -webkit-box-shadow: 0 1px 0 0 transparent;
+    box-shadow: 0 1px 0 0 transparent;
+}
+.select-wrapper input.select-dropdown,
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea
+	border 1px solid rgba(black, 0.15)
+	padding 4px 15px 0
+	box-sizing border-box
+	margin-bottom 0
+	height 42px
+	background white
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+input[type=url]:not(.browser-default):focus:not([readonly])+label,
+input[type=time]:not(.browser-default):focus:not([readonly])+label,
+input[type=date]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=number]:not(.browser-default):focus:not([readonly])+label,
+input[type=search]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+    color: rgb(108,92,231);
+}
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+	margin-bottom 0
+}
+.owl-theme .owl-nav
+	margin-top 0
+.row,
+.container .row
+	margin 0 -12px
+.row .col
+	padding 0 12px
+.input-field
+	margin-top 0
+.dropdown-content li>a, .dropdown-content li>span
+	color #707070
+	font-weight normal

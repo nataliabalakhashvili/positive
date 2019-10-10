@@ -1,0 +1,37 @@
+@import "variables"
+@import "mixins"
+
+@keyframes scroll
+  	0% 
+  		transform translateY(0)
+  	50% 
+  		transform translateY(-10px)
+  	100%
+  		transform translateY(0)
+@keyframes enterHeight
+  	0% 
+  		height 0
+  	100%
+  		height calc(100% - 40px)
+@keyframes enterWidth
+    0% 
+      width 0
+    100%
+      width calc(100% - 40px)
+      
+@keyframes playAnimation1
+    0% 
+      transform scaleY(1)
+    50%
+      transform scaleY(5)
+    100%
+      transform scaleY(1)
+      
+@keyframes playAnimation2
+    0% 
+      transform scaleY(1)
+    50%
+      transform scaleY(3)
+    100%
+      transform scaleY(1)
+      
